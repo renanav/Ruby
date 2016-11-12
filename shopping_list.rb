@@ -3,16 +3,24 @@ def create_list
   name = gets.chomp
 
   hash = { "name" => name, "items" => Array.new }
-  return hash
 end
 
 def add_list_item
-  print "What is the name of the item called?"
+  print "What is the name of the item called? "
   item_name = gets.chomp
 
-  hash = { "name" => name}
+  print "How many? "
+  quantity = gets.chomp.to_i
+
+  hash = { "name" => item_name, "quantity" => quantity}
   return hash
 end
 
 list = create_list()
+puts list.inspect
+
+#push the items hash into the items Array
+list['items'].push(add_list_item())
+
+#the final list
 puts list.inspect
