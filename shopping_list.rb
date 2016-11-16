@@ -39,9 +39,23 @@ puts "Lets add some items to your list"
 
 #push the items hash into the items Array
 list['items'].push(add_list_item())
-list['items'].push(add_list_item())
-list['items'].push(add_list_item())
+loop do
+    puts "Would you like to add more items? (Y/N)"
+    answer = gets.chomp.downcase
 
-#the final list
-puts "Here is you list"
-print_list(list)
+    if answer == "y"
+      add_list_item
+
+    else
+      if answer == "n"
+        #the final list
+        puts "Here is you list"
+        print_list(list)
+        break
+
+      else
+        puts "Please choose Y/N"
+
+      end
+    end
+  end
