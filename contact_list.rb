@@ -35,9 +35,10 @@ end
 
 puts "---"
 
-
+#An each loop to print out the contact_list
 contact_list.each do |contact|
   puts "Name #{contact["name"]}"
+#check if there is a phone number associated with the contacts
   if contact["phone_numbers"].size > 0
     contact["phone_numbers"].each do |phone_number|
       puts "Phone: #{phone_number}"
